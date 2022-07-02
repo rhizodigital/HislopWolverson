@@ -1,0 +1,110 @@
+{% extends "base.njk" %}
+{% set page = { name: "Home", title: "Homepage title"} %}
+
+{% block content %}
+
+<main class="pt-[120px] sm:pt-[80px]">
+    <!-- Hero Section -->
+    <div class="relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-blue-900 "></div>
+        <img src="{% static "hero.jpg" %}" alt="" class="h-full w-full object-cover">
+        <!-- Hero Caption -->
+        <div class="absolute top-0 left-0 w-full h-full flex flex-row items-center justify-center md:justify-start">
+            <div class="px-10 pb-4 container mx-auto text-white text-center md:text-left">
+                <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-thin sm:mb-2">Welcome to</p>
+                <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight sm:leading-tight tracking-tight font-semibold mb-2 md:mb-3 lg:mb-4 ">Hislop &amp; Wolverson<br> <span class="text-blue-200">Dental Practice</span></h1>
+                <p class="text-sm sm:text-lg md:text-xl lg:text-3xl">The friendly family dentist.</p>
+            </div>
+        </div>
+        <!-- End Hero Caption -->
+        <div class="absolute bottom-0 left-0 right-0 pointer-events-none text-white -mb-[1px]">
+            <svg class="fill-white block w-full h-auto scale-[150%] origin-bottom" viewBox="0 0 1200 120">
+                <use xlink:href="#shape_curve2" />
+            </svg>
+        </div>
+    </div>
+    <!-- End Hero Section -->
+    <div class="container mx-auto px-4 py-4 md:py-10 lg:py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 py-6">
+            <!-- Services box -->
+            <div class="grid grid-cols-2 gap-3 sm:gap-6 text-blue-900">
+                <div class="bg-white shadow rounded overflow-hidden flex flex-col">
+                    <div class="grow">
+                        <img src="{% static "dental-cosmetics.jpg" %}" alt="" class="object-cover w-full h-full">
+                    </div>
+                    <div class="py-2 px-2 sm:px-4 grow-0">
+                        <h3 class="text-xs sm:text-sm md:text-base">Dental Cosmetics</h3>
+                    </div>
+                </div>
+                <div class="bg-white shadow rounded overflow-hidden flex flex-col">
+                    <div class="grow">
+                        <img src="{% static "orthodontics.jpg" %}" alt="" class="object-cover w-full h-full">
+                    </div>
+                    <div class="py-2 px-2 sm:px-4 grow-0">
+                        <h3 class="text-xs sm:text-sm md:text-base">Orthodontics</h3>
+                    </div>
+                </div>
+                <div class="bg-white shadow rounded overflow-hidden flex flex-col">
+                    <div class="grow">
+                        <img src="{% static "nhs.jpg" %}" alt="" class="object-cover w-full h-full">
+                    </div>
+                    <div class="py-2 px-2 sm:px-4 grow-0">
+                        <h3 class="text-xs sm:text-sm md:text-base">NHS/Private</h3>
+                    </div>
+                </div>
+                <div class="bg-white shadow rounded overflow-hidden flex flex-col">
+                    <div class="grow">
+                        <img src="{% static "dentures.jpg" %}" alt="" class="object-cover w-full h-full">
+                    </div>
+                    <div class="py-2 px-2 sm:px-4 grow-0">
+                        <h3 class="text-xs sm:text-sm md:text-base">Dentures</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- End Services box -->
+            <!-- Info box -->
+            <div class="bg-blue-100 p-4 sm:p-6 md:p-8 text-blue-900 rounded">
+
+                <p class="font-semibold text-lg sm:text-xl md:text-2xl mb-4 sm:mb-5 md:mb-6">Opening times</p>
+                <table class="table-auto w-full mb-6 text-xs sm:text-sm md:text-base">
+                    <tbody>
+                        <tr class="border-b border-t border-blue-300 align-text-top">
+                            <td class="py-4">Monday - Friday</td>
+                            <td class="py-4">
+                                9am to 1pm<br>
+                                2pm to 5:30pm
+                            </td>
+                        </tr>
+                        <tr class="border-b border-blue-300 align-text-top">
+                            <td class="py-4">Saturday - Sunday</td>
+                            <td class="py-4">Closed</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="font-semibold text-lg sm:text-xl md:text-2xl mb-4 sm:mb-5 md:mb-6">Contact us</p>
+                <div class="flex flex-col text-blue-900 text-xs sm:text-sm md:text-base mb-3">
+                    <div class="flex flex-row items-center mb-2">
+                        <svg class="w-5 h-5 mr-2 shrink-0">
+                            <use xlink:href="#phone_icon" />
+                        </svg>
+                        <a href="">Call: 01302 349 181</a>
+                    </div>
+                    <div class="flex flex-row items-center mb-2">
+                        <svg class="w-5 h-5 mr-2 shrink-0 mt-1">
+                            <use xlink:href="#location_icon" />
+                        </svg>
+                        <p class="text-blue-900">
+                            43 Thorne Road, Doncaster, South Yorkshire, <span class="whitespace-nowrap">DN1 2EX</span><br>
+                        </p>
+                    </div>
+                </div>
+                <a class="map-link text-xs sm:text-sm md:text-base px-2 py-1 border-2 border-blue-900 rounded text-blue-900 inline-block hover:bg-blue-900 hover:text-blue-100" target='_blank'>Map and directions</a>
+
+            </div>
+            <!-- End info box -->
+        </div>
+    </div>
+</main>
+
+
+{% endblock %}
