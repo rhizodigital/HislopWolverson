@@ -1,7 +1,7 @@
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
-
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: './src/js/main.js',
@@ -13,6 +13,14 @@ module.exports = {
 
     module: {
         rules: [
+            
+            {
+                test: /\.m?js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader",
+                }
+            },
             {
                 test: /\.css$/i,
                 use: [
@@ -22,11 +30,14 @@ module.exports = {
                 ]
             },
             {
-                test: /\.m?js$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: "babel-loader",
-                }
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'images',
+                    },
+                }]
             },
             {
                 test: /\.njk$/,
@@ -45,38 +56,33 @@ module.exports = {
                     }
                 ]
             },
-            {
-                test: /\.(png|jpe?g|gif)$/i,
-                use: [{
-                    loader: 'file-loader',
-                    options: {
-                        name: 'images/[name].[ext]',
-                      },
-                }]
-            },
+
         ]
     },
 
     plugins: [
         new HTMLWebpackPlugin({
             template: './src/pages/index.njk',
-            templateParameters: {
-                username: 'Michael'
-            }
         }),
         new HTMLWebpackPlugin({
-            template: './src/pages/about.njk',
-            filename: 'about.html',
-            templateParameters: {
-                username: 'Michael'
-            }
+            template: './src/pages/team.njk',
+            filename: 'team/index.html',
         }),
         new MiniCssExtractPlugin({
             filename: 'css/[name].css',
         }),
+        new CopyPlugin({
+            patterns: [
+              {
+                from: './src/images',
+                to: './dist/images',
+              },
+
+            ],
+        }),
     ],
     devServer: {
-        watchFiles: ['src/**/*.njk',],
-        allowedHosts: "all"
+        hot: false,
+        allowedHosts: "all",
     },
 }

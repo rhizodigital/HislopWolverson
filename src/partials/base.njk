@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Hislop and Wolverson. 43 Thorne Road, Doncaster, South Yorkshire, DN1 2EX (01302) 349181. Provided and run by: Mr. John Wolverson.">
     <title>{{ page.title }}</title>
 </head>
 <body x-data="{ dropdown_open: false }">
+    <!-- Header -->
     {% include "header.njk" %}
-    {% block content %}
-        
-    {% endblock %}
+    <!-- Main content -->
+    <main class="pt-[120px] sm:pt-[112px]">
+        {% block content %}
+            
+        {% endblock %}
+    </main>
+    <!-- Footer -->
     {% include "footer.njk" %}
 </body>
 </html>

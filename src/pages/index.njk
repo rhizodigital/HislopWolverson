@@ -1,30 +1,32 @@
 {% extends "base.njk" %}
-{% set page = { name: "Home", title: "Homepage title"} %}
+{% set page = { name: "home", title: "Hislop & Wolverson Dental Practice"} %}
 
 {% block content %}
 
-<main class="pt-[120px] sm:pt-[80px]">
-    <!-- Hero Section -->
-    <div class="relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-blue-900 "></div>
-        <img src="{% static "hero.jpg" %}" alt="" class="h-full w-full object-cover">
-        <!-- Hero Caption -->
-        <div class="absolute top-0 left-0 w-full h-full flex flex-row items-center justify-center md:justify-start">
-            <div class="px-10 pb-4 container mx-auto text-white text-center md:text-left">
-                <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-thin sm:mb-2">Welcome to</p>
-                <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight sm:leading-tight tracking-tight font-semibold mb-2 md:mb-3 lg:mb-4 ">Hislop &amp; Wolverson<br> <span class="text-blue-200">Dental Practice</span></h1>
-                <p class="text-sm sm:text-lg md:text-xl lg:text-3xl">The friendly family dentist.</p>
-            </div>
-        </div>
-        <!-- End Hero Caption -->
-        <div class="absolute bottom-0 left-0 right-0 pointer-events-none text-white -mb-[1px]">
-            <svg class="fill-white block w-full h-auto scale-[150%] origin-bottom" viewBox="0 0 1200 120">
-                <use xlink:href="#shape_curve2" />
-            </svg>
+<!-- Hero Section -->
+<div class="relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-blue-900 "></div>
+    <img src="{% static "hero.jpg" %}" alt="" class="h-full w-full object-cover">
+    <!-- Hero Caption -->
+    <div class="absolute top-0 left-0 w-full h-full flex flex-row items-center justify-center md:justify-start">
+        <div class="px-10 pb-4 container mx-auto text-white text-center md:text-left">
+            <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-thin sm:mb-2">Welcome to</p>
+            <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight sm:leading-tight tracking-tight font-semibold mb-2 md:mb-3 lg:mb-4 ">Hislop &amp; Wolverson<br> <span class="text-blue-200">Dental Practice</span></h1>
+            <p class="text-sm sm:text-lg md:text-xl lg:text-3xl">The friendly family dentist.</p>
         </div>
     </div>
-    <!-- End Hero Section -->
-    <div class="container mx-auto px-4 py-4 md:py-10 lg:py-16">
+    <!-- End Hero Caption -->
+    <div class="absolute bottom-0 left-0 right-0 pointer-events-none text-white -mb-[1px]">
+        <svg class="fill-white block w-full h-auto scale-[150%] origin-bottom" viewBox="0 0 1200 120">
+            <use xlink:href="#shape_curve2" />
+        </svg>
+    </div>
+</div>
+<!-- End Hero Section -->
+
+<!-- Services and info -->
+<section class="relative overflow-hidden -mb-[1px]">
+    <div class="container mx-auto px-4 pt-8 pb-20 md:pt-14 md:pb-24 lg:pt-16 lg:pb-36">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 py-6">
             <!-- Services box -->
             <div class="grid grid-cols-2 gap-3 sm:gap-6 text-blue-900">
@@ -63,7 +65,7 @@
             </div>
             <!-- End Services box -->
             <!-- Info box -->
-            <div class="bg-blue-100 p-4 sm:p-6 md:p-8 text-blue-900 rounded">
+            <div class="bg-blue-100 p-4 sm:p-6 md:p-8 text-blue-900 rounded" id="info_box">
 
                 <p class="font-semibold text-lg sm:text-xl md:text-2xl mb-4 sm:mb-5 md:mb-6">Opening times</p>
                 <table class="table-auto w-full mb-6 text-xs sm:text-sm md:text-base">
@@ -82,12 +84,12 @@
                     </tbody>
                 </table>
                 <p class="font-semibold text-lg sm:text-xl md:text-2xl mb-4 sm:mb-5 md:mb-6">Contact us</p>
-                <div class="flex flex-col text-blue-900 text-xs sm:text-sm md:text-base mb-3">
+                <div class="flex flex-col text-blue-900 text-xs sm:text-sm md:text-base mb-4">
                     <div class="flex flex-row items-center mb-2">
                         <svg class="w-5 h-5 mr-2 shrink-0">
                             <use xlink:href="#phone_icon" />
                         </svg>
-                        <a href="">Call: 01302 349 181</a>
+                        <a href="tel:+441302349181">Call: 01302 349 181</a>
                     </div>
                     <div class="flex flex-row items-center mb-2">
                         <svg class="w-5 h-5 mr-2 shrink-0 mt-1">
@@ -104,7 +106,167 @@
             <!-- End info box -->
         </div>
     </div>
-</main>
+    <div class="absolute z-10 bottom-0 left-0 right-0 pointer-events-none text-blue-200">
+        <svg class="block w-full h-auto scale-[150%] origin-bottom" viewBox="0 0 1200 120">
+            <use xlink:href="#shape_curve2" />
+        </svg></div>
+</section>
+<!-- End services and info -->
 
+<section class="bg-blue-200 relative overflow-hidden border-t-2 border-blue-200">
+ 
+    <div class="container mx-auto px-4 pt-8 pb-20 md:pt-14 md:pb-24 lg:pt-16 lg:pb-36">
+        <h1 class="text-2xl md:text-3xl lg:text-4xl text-blue-900 font-semibold mb-8 sm:mb-10 md:mb-12 lg:mb-16 text-center">Our Team</h1>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mb-4 ">
 
+            <div class="bg-white rounded hover:shadow-md">
+                <div class="flex flex-col h-full p-4">
+                    <p class="text-blue-900 font-light text-2xl mb-2">John Wolverson</p>
+                    <hr class="mb-2">
+                    <p class="mb-4 text-sm text-blue-900 flex flex-row justify-between grow ">
+                        <span class="uppercase">Dentist</span>
+                        <span>GQC No - 47755</span>
+                    </p>
+
+                    <p class="text-slate-500">BChD Leeds 1974</p>
+                </div>
+            </div>
+            <div class="bg-white rounded hover:shadow-md">
+                <div class="flex flex-col h-full p-4">
+                    <p class="text-blue-900 font-light text-2xl mb-2">Pamela Wolverson</p>
+                    <hr class="mb-2">
+                    <p class="mb-4 text-sm text-blue-900 flex flex-row justify-between grow ">
+                        <span class="uppercase">Dentist</span>
+                        <span>GQC No - 47757</span>
+                    </p>
+
+                    <p class="text-slate-500">BChD Leeds 1974</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded hover:shadow-md">
+                <div class="flex flex-col h-full p-4">
+                    <p class="text-blue-900 font-light text-2xl mb-2">Kate Evans</p>
+                    <hr class="mb-2">
+                    <p class="mb-4 text-sm text-blue-900 flex flex-row justify-between grow ">
+                        <span class="uppercase">Dentist</span>
+                        <span>GQC No - 73268</span>
+                    </p>
+
+                    <p class="text-slate-500">B.D.S Sheffield 1997</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded hover:shadow-md">
+                <div class="flex flex-col h-full p-4">
+                    <p class="text-blue-900 font-light text-2xl mb-2">Judith Eldridge</p>
+                    <hr class="mb-2">
+                    <p class="mb-4 text-sm text-blue-900 flex flex-row justify-between grow ">
+                        <span class="uppercase">Dentist</span>
+                        <span>GQC No - 76117</span>
+                    </p>
+
+                    <p class="text-slate-500">B.D.S Sheffield 1999</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded hover:shadow-md">
+                <div class="flex flex-col h-full p-4">
+                    <p class="text-blue-900 font-light text-2xl mb-2">Sidra Shaheen</p>
+                    <hr class="mb-2">
+                    <p class="mb-4 text-sm text-blue-900 flex flex-row justify-between grow ">
+                        <span class="uppercase">Therapist</span>
+                        <span>GQC No - 298195</span>
+                    </p>
+
+                    <p class="text-slate-500">Diploma in Dental Hygiene and Therapy Sheffield 2020</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded hover:shadow-md">
+                <div class="flex flex-col h-full p-4">
+                    <p class="text-blue-900 font-light text-2xl mb-2">Stephanie Skelton</p>
+                    <hr class="mb-2">
+                    <p class="mb-4 text-sm text-blue-900 flex flex-row justify-between grow ">
+                        <span class="uppercase">Therapist</span>
+                        <span>GQC No - 76117</span>
+                    </p>
+
+                    <p class="text-slate-500">Diploma in Dental Hygiene and Therapy Sheffield 2021. National Diploma in Dental Nursing NEBDN 2016</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 pointer-events-none text-blue-900 -mb-[1px]">
+        <svg class="fill-blue-900 block w-full h-auto scale-[150%] origin-bottom" viewBox="0 0 1200 120">
+            <use xlink:href="#shape_curve2" />
+        </svg>
+    </div>
+</section>
+<section class="bg-blue-900 md:px-4 py-12 md:p-12 lg:p-24">
+    <div class="container mx-auto">
+        <div id="testimonials" class="swiper">
+            <div class="swiper-wrapper flex flex-row items-center">
+                <div class="swiper-slide px-4 md:px-10 py-8">
+                    <div class="bg-white p-8 rounded-md relative shadow-lg">
+                        <span class="font-serif text-6xl leading-none rounded-full border-2 border-blue-900 inline-block p-4 text-blue-900 bg-white absolute -top-8">
+                            <svg viewBox="0 0 448 512" class="w-8 h-8">
+                                <use xlink:href="#quote" />
+                            </svg>
+                        </span>
+                        <blockquote class="italic font-serif text-slate-500 mt-6 mb-4">
+                            &ldquo;I started going to Hislop and Wolverson in 2017 and I have been consistently impressed with the professionalism of its friendly and attentive staff. I would particularly like to draw attention to Miss Katherine Hubbard who has made a fantastic job of fixing my upper right premolar after it needed extensive filling. She is a very knowledgable dentist who made me feel totally at ease with something I was worried about going through. Throughout the process she kept me informed about what she was doing and why, which made my trip not so much painful as enlightening! It is good to know that the future of dentistry will be in the hands of people like her. Keep up the great work Miss Hubbard!&rdquo;
+                        </blockquote>
+                        <cite class="not-italic text-blue-900">Hugh Graves</cite>
+                    </div>
+
+                </div>
+                <div class="swiper-slide px-4 md:px-10 py-8">
+                    <div class="bg-white p-8 rounded-md relative shadow-lg">
+                        <span class="font-serif text-6xl leading-none rounded-full border-2 border-blue-900 inline-block p-4 text-blue-900 bg-white absolute -top-8">
+                            <svg viewBox="0 0 448 512" class="w-8 h-8">
+                                <use xlink:href="#quote" />
+                            </svg>
+                        </span>
+                        <blockquote class="italic font-serif text-slate-500 mt-6 mb-4">
+                            &ldquo;Very professional and friendly practice. Covid-19 procedures in place are extremely good, very strict and clean. The receptionists are always polite and helpful. Waiting area is clean and modern. Great dentists - Ms Hubbard and Ms Evans.&rdquo; 
+                        </blockquote>
+                        <cite class="not-italic text-blue-900">Victoria</cite>
+                    </div>
+
+                </div>
+                <div class="swiper-slide px-4 md:px-10 py-8">
+                    <div class="bg-white p-8 rounded-md relative shadow-lg">
+                        <span class="font-serif text-6xl leading-none rounded-full border-2 border-blue-900 inline-block p-4 text-blue-900 bg-white absolute -top-8">
+                            <svg viewBox="0 0 448 512" class="w-8 h-8">
+                                <use xlink:href="#quote" />
+                            </svg>
+                        </span>
+                        <blockquote class="italic font-serif text-slate-500 mt-6 mb-4">
+                            &ldquo;I have been a patient at this dental practice for over 20 years and most recently visited them after fracturing a composite front tooth. I was seen less than 24 hours after it happened, even during the current COVID19 situation. Really could not be happier with the reliability and the level of care & attention provided at Hislop and Wolverson.&rdquo; 
+                        </blockquote>
+                        <cite class="not-italic text-blue-900">Anonymous</cite>
+                    </div>
+
+                </div>
+            </div>
+            <div class="absolute left-0 top-0 h-full hidden md:flex flex-col content-center justify-center z-10">
+                <button class="swiper-button-prev p-2 rounded-md bg-white flex items-center justify-center shadow">
+                    <svg viewBox="0 0 24 24" class="w-4 h-4">
+                        <use xlink:href="#left" />
+                    </svg>
+                </button>
+            </div>
+            <div class="absolute right-0 top-0 h-full hidden md:flex flex-col content-center justify-center z-10">
+                <button class="swiper-button-next p-2 rounded-md bg-white flex items-center justify-centers shadow">
+                    <svg viewBox="0 0 24 24" class="w-4 h-4">
+                        <use xlink:href="#right" /> 
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</section> 
 {% endblock %}

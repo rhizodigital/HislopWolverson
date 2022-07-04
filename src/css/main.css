@@ -9,13 +9,15 @@ button, a {
 }
 
 .headroom {
-    will-change: transform;
-    transition: transform 200ms linear;
+    @apply will-change-transform transition-transform ease-linear duration-200;
 }
 .headroom--pinned {
-    transform: translateY(0%);
+    @apply translate-y-0;
 
 }
 .headroom--unpinned {
-    transform: translateY(-100%);
+    @apply -translate-y-full;
+}
+.swiper-button-disabled {
+    @apply opacity-50;
 }
